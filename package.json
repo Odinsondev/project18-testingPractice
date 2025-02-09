@@ -1,0 +1,15 @@
+{
+  "name": "project18-testingpractice",
+  "version": "1.0.0",
+  "description": "My eighteenth Odin project - Testing Practice",
+  "main": "javascript.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
