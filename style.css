@@ -17,38 +17,45 @@ body {
 }
 
 :root {
-  --background1: rgb(255, 255, 255);
+  --background1: rgb(43, 43, 43);
   --background2: rgb(255, 255, 255);
   --text1: rgb(0, 0, 0);
   --text2: rgb(0, 0, 0);
-  --text-footer: rgb(0, 0, 0);
+  --text-footer: rgb(211, 211, 211);
   /* font-size: 16px; */ /* Disables browser font size setting */
 }
 
-:root.light {
-  --background1: rgb(255, 255, 255);
-  --background2: rgb(255, 255, 255);
-  --text1: rgb(0, 0, 0);
-  --text2: rgb(0, 0, 0);
-  --text-footer: rgb(0, 0, 0);
-  /* font-size: 16px; */
-}
-
-:root.dark {
-  --background1: rgb(0, 0, 0);
-  --background2: rgb(0, 0, 0);
-  --text1: rgb(255, 255, 255);
-  --text2: rgb(255, 255, 255);
-  --text-footer: rgb(255, 255, 255);
-  /* font-size: 16px; */
-}
-
-/* body {
+body {
   display: grid;
-  grid-template: 1fr / 1fr;
-} */
+  grid-template: 1fr 4fr 40px/ 1fr;
+}
+
+header {
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--text-footer);
+}
+
+#container {
+  text-align: center;
+}
+
+#title {
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+#instructions {
+  font-size: 1rem;
+  margin: 0;
+}
 
 footer {
+  grid-row: 3 / 4;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,9 +63,4 @@ footer {
   height: 40px;
   font-size: 1rem;
   color: var(--text-footer);
-
-  /* position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0; */
 }

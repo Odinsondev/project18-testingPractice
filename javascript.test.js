@@ -2,8 +2,9 @@
   test1,
   capitalize,
   reverse,
-  createCalculator,
+  calculator,
   caesarCipher,
+  analyzeArray,
 } = require('./javascript.js'));
 
 //initial test
@@ -31,19 +32,19 @@ test('reverses the string if several words', function () {
 
 //calculator function tests
 test('add', function () {
-  expect(createCalculator().add(60, 9)).toBe(69);
+  expect(calculator().add(60, 9)).toBe(69);
 });
 
 test('subtract', function () {
-  expect(createCalculator().subtract(60, 9)).toBe(51);
+  expect(calculator().subtract(60, 9)).toBe(51);
 });
 
 test('multiply', function () {
-  expect(createCalculator().multiply(60, 9)).toBe(540);
+  expect(calculator().multiply(60, 9)).toBe(540);
 });
 
 test('divide', function () {
-  expect(createCalculator().divide(81, 9)).toBe(9);
+  expect(calculator().divide(81, 9)).toBe(9);
 });
 
 //caesarCipher function tests
@@ -61,4 +62,14 @@ test('tests case preservation', function () {
 
 test('tests punctuation', function () {
   expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+});
+
+//analyzeArray function tests
+test('tests object output', function () {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toStrictEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });

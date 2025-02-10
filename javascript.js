@@ -1,3 +1,16 @@
+console.log(
+  'These functions were written to practice test-driven developement using jest'
+);
+console.log('Syntax:');
+console.log('console.log(capitalize("string"));');
+console.log('console.log(reverse("string"));');
+console.log('console.log(calculator().add(num1, num2));');
+console.log('console.log(calculator().subtract(num1, num2));');
+console.log('console.log(calculator().multiply(num1, num2));');
+console.log('console.log(calculator().divide(num1, num2));');
+console.log('console.log(caesarCipher("string", num1));');
+console.log('console.log(analyzeArray([num1, num2, ...]));');
+
 //test
 function test1() {
   return true;
@@ -25,7 +38,7 @@ function reverse(string) {
 //3. A calculator object that contains functions for the basic operations:
 //add, subtract, divide, and multiply.
 //Each of these functions should take two numbers and return the correct calculation.
-function createCalculator() {
+function calculator() {
   const calc = {};
   calc.add = function (num1, num2) {
     return num1 + num2;
@@ -92,12 +105,57 @@ function caesarCipher(string, shift) {
     }
   }
 
-  console.log(newStringArray);
   const result = newStringArray.join('');
   return result;
 }
 
 //5. An analyzeArray function that takes an array of numbers and
 //returns an object with the following properties: average, min, max, and length.
+function analyzeArray(array) {
+  const object = {};
 
-module.exports = { test1, capitalize, reverse, createCalculator, caesarCipher };
+  //average
+  let arraySum = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    arraySum += array[i];
+  }
+
+  object.average = arraySum / array.length;
+
+  //min
+  let smallestElement = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < smallestElement) {
+      smallestElement = array[i];
+    }
+  }
+
+  object.min = smallestElement;
+
+  //max
+  let largestElement = array[0];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > largestElement) {
+      largestElement = array[i];
+    }
+  }
+
+  object.max = largestElement;
+
+  //lenth
+  object.length = array.length;
+
+  return object;
+}
+
+module.exports = {
+  test1,
+  capitalize,
+  reverse,
+  calculator,
+  caesarCipher,
+  analyzeArray,
+};
